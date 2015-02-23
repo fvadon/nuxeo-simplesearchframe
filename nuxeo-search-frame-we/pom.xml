@@ -9,7 +9,7 @@
     <version>7.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.nuxeo.labs</groupId>
+  <groupId>org.nuxeo.labs.searchframe</groupId>
   <artifactId>nuxeo-search-frame-we</artifactId>
   <version>7.1-SNAPSHOT</version>
   <name>nuxeo-search-frame-we</name>
