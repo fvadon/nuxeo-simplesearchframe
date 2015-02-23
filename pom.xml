@@ -14,6 +14,7 @@
   <description />
   <modules>
     <module>nuxeo-search-frame-we</module>
+    <module>nuxeo-search-frame-mp</module>
   </modules>
   <properties>
     <nuxeo.searchframe.version>7.1-SNAPSHOT</nuxeo.searchframe.version>
@@ -23,6 +24,11 @@
       <dependency>
         <groupId>org.nuxeo.labs.searchframe</groupId>
         <artifactId>nuxeo-search-frame-we</artifactId>
+        <version>${nuxeo.searchframe.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.nuxeo.labs.searchframe</groupId>
+        <artifactId>nuxeo-search-frame-mp</artifactId>
         <version>${nuxeo.searchframe.version}</version>
       </dependency>
     </dependencies>
