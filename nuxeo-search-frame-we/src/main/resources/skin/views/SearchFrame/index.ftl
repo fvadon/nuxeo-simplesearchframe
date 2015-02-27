@@ -18,8 +18,10 @@
 	</script>
 
 	<input type="text" id="searchField" onkeydown="doQuery()">
-	<!--<button onclick="doQuery()">Search</button>-->
+	<button onclick="postToParent()">Post</button>-->
 	<div id="results"></div>
+
+	
 
 
 </div>

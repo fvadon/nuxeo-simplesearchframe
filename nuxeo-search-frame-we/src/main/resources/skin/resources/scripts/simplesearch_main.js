@@ -38,7 +38,17 @@ function doQuery() {
 
 function doInit() {
 	nxClient = new nuxeo.Client({timeout: 10000});
-	nxClient.schema(["dublincore", "file"]);	
+	nxClient.schema(["dublincore", "file"]);
+	//console.log(parent.document.parent("div"));
+	/*window.addEventListener( "message",
+	          function (e) {
+	                console.log(e.data);
+	          });*/
+}
+
+function postToParent(){
+	console.log("postFromEnfant");
+	parent.postMessage('hello', "*");
 }
 
 
