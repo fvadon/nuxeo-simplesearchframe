@@ -16,10 +16,12 @@
 	var serverURL="${Context.getBaseURL()}/nuxeo/";
 	doInit();
 	</script>
-
+	
+	<div id="previousValue"></div>	
 	<input type="text" id="searchField" onkeydown="doQuery()">
-	<button onclick="postToParent()">Post</button>-->
 	<div id="results"></div>
+	<div><span><input type="radio" name="asset" value="" onClick="postToParent('')">No Asset</span>
+	</div>
 
 	
 

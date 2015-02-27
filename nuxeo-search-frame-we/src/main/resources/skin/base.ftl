@@ -12,7 +12,7 @@
   <@block name="header_scripts" />
 </head>
 
-<body>
+<body style="overflow-x:hidden">
       <div><@block name="content">The Content</@block></div>
 </body>
 </html>

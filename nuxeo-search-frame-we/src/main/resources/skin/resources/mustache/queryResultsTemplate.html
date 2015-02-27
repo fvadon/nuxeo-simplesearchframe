@@ -1,13 +1,19 @@
 <script id="query-results" type="text/html">
-	
-	<table>
 		{{#entries}}
-		<tr>
-			<td><input type="radio" name="asset" value="{{uid}}">{{title}}</td>
-			<td><img src="{{serverURL}}{{pictureUrlExtension}}{{uid}}{{thumbnailSize}}" alt="thumbnailPic"></td>
+		<div>
+			<span><input type="radio" name="asset" value="{{uid}}" onClick="postToParent('{{uid}}')">{{title}}</span>
+			<span><img src="{{serverURL}}{{pictureUrlExtension}}{{uid}}{{thumbnailSize}}" alt="thumbnailPic"></span>
 
-		</tr>  
+		</div>  
 		{{/entries}}
-	<table>
-		{{^entries}}<p>No document found</p>{{/entries}}
+		{{^entries}}{{^noQuery}}<p>No document found</p>{{/noQuery}}{{/entries}}
+</script>
+
+<script id="previous-value" type="text/html">
+	
+		{{#initialValue}}
+			<div><span><input type="radio" name="asset" value="{{uid}}" onClick="postToParent('{{uid}}')" checked>Keep Actual Asset</span>
+			<span><img src="{{serverURL}}{{pictureUrlExtension}}{{initialValue}}{{thumbnailSize}}" alt="thumbnailPic"></span>
+			</div>
+		{{/initialValue}}
 </script>
