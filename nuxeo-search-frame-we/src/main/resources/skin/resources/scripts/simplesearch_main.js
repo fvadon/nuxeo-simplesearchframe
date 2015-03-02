@@ -17,7 +17,7 @@ function renderQueryResults(error, data) {
 		}
 		documents.serverURL=serverURL;
 		documents.pictureUrlExtension='nxpicsfile/default/';
-		documents.thumbnailSize='/Thumbnail:content/';
+		documents.thumbnailSize='/Small:content/';
 		documents.initialValue=initialValue;
 		console.log(documents);
       	$.Mustache.load('./skin/searchframe/mustache/queryResultsTemplate.html').done(function(){
@@ -53,6 +53,7 @@ function doQuery() {
 }
 
 function doInit() {
+	initialValue="";
 	nxClient = new nuxeo.Client({timeout: 10000});
 	nxClient.schema(["dublincore", "file"]);
 	window.addEventListener( "message",
@@ -65,7 +66,6 @@ function doInit() {
 
 function postToParent(documentId){
 	parent.postMessage(documentId, "*");
-	//initialValue="";
 }
 
 

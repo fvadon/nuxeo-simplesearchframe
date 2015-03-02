@@ -1,19 +1,40 @@
 <script id="query-results" type="text/html">
 		{{#entries}}
-		<div>
-			<span><input type="radio" name="asset" value="{{uid}}" onClick="postToParent('{{uid}}')">{{title}}</span>
-			<span><img src="{{serverURL}}{{pictureUrlExtension}}{{uid}}{{thumbnailSize}}" alt="thumbnailPic"></span>
-
-		</div>  
+			<div class="pure-u-6-24">
+				<div class="pure-g">	
+					<div class="pure-u-1 search-div-element">
+						<p class="search-element">{{title}}</p>
+					</div>
+				</div>
+				<div class="pure-g">
+					<div class="pure-u-1 search-div-element">
+						<label for="{{uid}}-radio" class="radio">
+							<input type="radio" name="asset" id="{{uid}}-radio" value="{{uid}}" onClick="postToParent('{{uid}}')">
+								<img src="{{serverURL}}{{pictureUrlExtension}}{{uid}}{{thumbnailSize}}" alt="thumbnailPic" class="searchpic">
+						</label>
+					</div>
+				</div>
+			</div>
 		{{/entries}}
-		{{^entries}}{{^noQuery}}<p>No document found</p>{{/noQuery}}{{/entries}}
+		{{^entries}}{{^noQuery}}<div class="pure-u-1"<p>No document found</p></div>{{/noQuery}}{{/entries}}
 </script>
 
 <script id="previous-value" type="text/html">
-	
 		{{#initialValue}}
-			<div><span><input type="radio" name="asset" value="{{uid}}" onClick="postToParent('{{uid}}')" checked>Keep Actual Asset</span>
-			<span><img src="{{serverURL}}{{pictureUrlExtension}}{{initialValue}}{{thumbnailSize}}" alt="thumbnailPic"></span>
+			<div class="pure-u-6-24">
+				<div class="pure-g">	
+					<div class="pure-u-1 search-div-element">
+						<p class="search-element">Keep current asset</p>
+					</div>
+				</div>
+				<div class="pure-g">
+					<div class="pure-u-1 search-div-element">
+						<label for="{{initialValue}}-initial-radio" class="radio">
+							<input type="radio" name="asset" id="{{initialValue}}-initial-radio" value="{{initialValue}}" onClick="postToParent('{{initialValue}}')" checked>
+								<img src="{{serverURL}}{{pictureUrlExtension}}{{initialValue}}{{thumbnailSize}}" alt="thumbnailPic" class="searchpic">
+						</label>
+					</div>
+				</div>
 			</div>
 		{{/initialValue}}
 </script>
