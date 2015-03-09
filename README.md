@@ -1,6 +1,11 @@
 # nuxeo-search-frame
 ===
 
+This plugin creates a simple webengine page to be used by the drupal integration plugin at:
+[https://github.com/fvadon/nuxeo-drupal](https://github.com/fvadon/nuxeo-drupal)
+
+
+Use mvn clean install to build. A marketplace package is generated.
 
 
 
