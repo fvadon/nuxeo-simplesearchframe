@@ -9,7 +9,6 @@ function renderQueryResults(error, data) {
 	else {
 		var documents=new Object();
 		if(data) {
-			console.log("not empty");
 			documents=data;
 		}
 		else {
@@ -19,7 +18,6 @@ function renderQueryResults(error, data) {
 		documents.pictureUrlExtension='nxpicsfile/default/';
 		documents.thumbnailSize='/Small:content/';
 		documents.initialValue=initialValue;
-		console.log(documents);
       	$.Mustache.load('./skin/searchframe/mustache/queryResultsTemplate.html').done(function(){
           var content = $.Mustache.render('query-results', documents);
       		 $('#results').html(content);
@@ -58,14 +56,15 @@ function doInit() {
 	nxClient.schema(["dublincore", "file"]);
 	window.addEventListener( "message",
 	          function (e) {
-							initialValue=e.data;
+							initialValue=e.data.message;
+							parentId=e.data.parentId;
 							doQuery();
-							console.log(e.data);
 	          });
 }
 
 function postToParent(documentId){
-	parent.postMessage(documentId, "*");
+	var messageToSend = {parentId:parentId, documentId:documentId}
+	parent.postMessage(messageToSend, "*");
 }
 
 
