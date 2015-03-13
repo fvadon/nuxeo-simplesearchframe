@@ -1,7 +1,7 @@
 # nuxeo-search-frame
 ===
 
-This plugin creates a simple webengine page to be used by the drupal integration plugin at:
+This plugin creates a simple webengine page to be used by the Drupal (or any other) integration plugin at:
 [https://github.com/fvadon/nuxeo-drupal](https://github.com/fvadon/nuxeo-drupal)
 
 
@@ -23,7 +23,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 Lesser General Public License for more details.
 
 Contributors:
-Thibaud Arguillere (https://github.com/ThibArg)
+Frederic Vadon 
 
 ## About Nuxeo
 
