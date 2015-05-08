@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.nuxeo</groupId>
     <artifactId>nuxeo-addons-parent</artifactId>
-    <version>7.1-SNAPSHOT</version>
+    <version>7.2-SNAPSHOT</version>
   </parent>
   <groupId>org.nuxeo.labs.searchframe</groupId>
   <artifactId>nuxeo-search-frame-parent</artifactId>
@@ -17,7 +17,7 @@
     <module>nuxeo-search-frame-mp</module>
   </modules>
   <properties>
-    <nuxeo.searchframe.version>7.1-SNAPSHOT</nuxeo.searchframe.version>
+    <nuxeo.searchframe.version>7.2-SNAPSHOT</nuxeo.searchframe.version>
   </properties>
   <dependencyManagement>
     <dependencies>

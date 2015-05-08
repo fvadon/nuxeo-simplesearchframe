@@ -22,7 +22,7 @@
 		margin:1em;
 }
   
-  </style
+  </style>
 
 </head>
 
