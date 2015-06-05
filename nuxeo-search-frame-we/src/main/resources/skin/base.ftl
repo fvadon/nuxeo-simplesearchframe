@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="${skinPath}/image/favicon.gif" />
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="${skinPath}/css/site.css" type="text/css" media="screen" charset="utf-8">
-  <link href="${skinPath}/css/select2.min.css" rel="stylesheet" />
+  <link href="${skinPath}/css/select2.css" rel="stylesheet" />
   
   
   <@block name="stylesheets" />

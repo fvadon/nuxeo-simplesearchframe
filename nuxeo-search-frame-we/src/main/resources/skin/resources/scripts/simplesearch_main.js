@@ -1,5 +1,6 @@
 /*
 */ 
+
 $(document).ready(function() {
 	$(".js-document-selection-ajax").select2({
 		  ajax: {
@@ -36,11 +37,45 @@ $(document).ready(function() {
 		  minimumInputLength: 1,
 		  templateResult: formatDocument, 
 		  templateSelection: formatDocumentSelection,
+		  initSelection : function (element, callback) {
+			  var data ={ uid: "3c89e729-dd59-4123-a3a4-2abbdaedbad1", title:"customtitle"};
+			  callback(data);
+			}
+		  });
+		
+	
+		//Automatic Styling
+		setTimeout(adjustHeight, 50); // Have to wait for the component to be loaded
+		setTimeout(adjustHeight, 500); // Longer time for safety		
+		$(".js-document-selection-ajax").on("select2:select", function (e) {
+			$(".select2-container--default .select2-selection--single").css("height",
+					$(".select2-selection__rendered").outerHeight( true ));
+		});
+		$(".js-document-selection-ajax").on("select2:unselect", function (e) {
+			$(".select2-container--default .select2-selection--single").css("height","");
 		});
 });
 
+function adjustHeight() {	
+	if($(".select2-selection__rendered").outerHeight( true ) > 10 ) {
+		$(".select2-container--default .select2-selection--single").css("height",
+				$(".select2-selection__rendered").outerHeight( true ));
+	}
+	
+}
+
 function initSelect2() {
 	//$(".js-document-selection-ajax").html("<option>")
+	//$(".js-document-selection-ajax").val("2ca27cda-b832-4148-a354-168fd6a2d855").trigger("change");
+	console.log("manual init");
+	$(".js-document-selection-ajax").select2({
+	
+	initSelection : function (element, callback) {
+		  var data ={ uid: "3c89e729-dd59-4123-a3a4-2abbdaedbad1", title:"customtitle"};
+		  callback(data);
+		}
+	});
+	console.log("try init selection");
 	
 }
 
@@ -48,7 +83,7 @@ function formatDocument (document) {
     //return document.title;
 	var markup = '<div class="clearfix">';
     if(document.uid){
-    	markup+='<div class="col-sm-1"><img src="'+serverURL+'nxpicsfile/default/'+document.uid+'/Small:content/" alt="thumbnailPic" style="max-width: 100%"></div>' +
+    	markup+='<div class="col-sm-1"><img src="'+serverURL+'nxpicsfile/default/'+document.uid+'/Thumbnail:content/" alt="thumbnailPic" style="max-width: 100%"></div>' +
     		'<div class="col-sm-6">'+document.title + '</div>' ;
 	}	
 	markup+='</div>';
@@ -59,7 +94,7 @@ function formatDocumentSelection (document) {
     //return document.title;
 	var markup = '<div class="clearfix">';
     if(document.uid){
-    	markup+='<div class="col-sm-1"><img src="'+serverURL+'nxpicsfile/default/'+document.uid+'/Small:content/" alt="thumbnailPic" style="max-width: 100%"></div>' +
+    	markup+='<div class="col-sm-1"><img src="'+serverURL+'nxpicsfile/default/'+document.uid+'/Thumbnail:content/" alt="thumbnailPic" style="max-width: 100%"></div>' +
     		'<div class="col-sm-1">'+document.title + '</div>' ;
 	}	
 	markup+='</div>';
@@ -125,6 +160,7 @@ function doInit() {
 							doQuery();
 							initSelect2();
 	          });
+
 }
 
 function postToParent(documentId){

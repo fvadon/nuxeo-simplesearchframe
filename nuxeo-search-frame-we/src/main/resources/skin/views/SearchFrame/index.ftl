@@ -4,13 +4,20 @@
 <script src="${skinPath}/scripts/jquery.mustache.js"></script>
 <script src="${skinPath}/scripts/mustache.js"></script>
 <script src="${skinPath}/scripts/simplesearch_main.js"></script>
-<script src="${skinPath}/scripts/select2.js"></script>
+<script src="${skinPath}/scripts/select2.full.js"></script>
 </@block> <@block name="content">
 
 <script type="text/javascript" charset="utf-8">
 	var serverURL = "${Context.getBaseURL()}/nuxeo/";
 	doInit();
 </script>
+
+
+<select class="js-document-selection-ajax" style="width: 50%">
+  <option></option>
+</select>
+
+<!-- 
 <form class="pure-form">
 
 	<div id="previousValue" class="pure-g"></div>
@@ -35,9 +42,7 @@
 	</div>
 </form>
 
-<select class="js-document-selection-ajax" style="width: 50%">
-  <option value="2ca27cda-b832-4148-a354-168fd6a2d855" selected="selected">CurrentAsset</option>
-</select>
+ -->
 
 
 
