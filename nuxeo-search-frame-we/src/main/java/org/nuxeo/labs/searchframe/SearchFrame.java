@@ -39,5 +39,17 @@ public class SearchFrame extends ModuleRoot {
     public Object doGet() {
         return getView("index");
     }
+    @GET
+    @Path("searchscreen")
+    @Produces("text/html")
+    public Object goToSearchScreen() {
+        return getView("searchscreen");
+    }
+    @GET
+    @Path("select2screen")
+    @Produces("text/html")
+    public Object goToselect2screen() {
+        return getView("select2screen");
+    }
 
 }
