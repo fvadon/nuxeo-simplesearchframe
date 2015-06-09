@@ -10,17 +10,12 @@
 <script src="${skinPath}/scripts/simplesearch_main.js"></script>
 </@block> 
 
-
-
-
 <@block name="content">
 
 <script type="text/javascript" charset="utf-8">
 	var serverURL = "${Context.getBaseURL()}/nuxeo/";
 	doInit();
 </script>
-
-
 
 <form class="pure-form">
 
@@ -45,8 +40,5 @@
 		</div>
 	</div>
 </form>
-
-
-
-
-</@block> </@extends>
+</@block> 
+</@extends>

@@ -17,7 +17,7 @@ function renderQueryResults(error, data) {
 		documents.pictureUrlExtension='nxpicsfile/default/';
 		documents.thumbnailSize='/Small:content/';
 		documents.initialValue=initialValue;
-      	$.Mustache.load('../../skin/searchframe/mustache/queryResultsTemplate.html').done(function(){
+      	$.Mustache.load('./../skin/searchframe/mustache/queryResultsTemplate.html').done(function(){
           var content = $.Mustache.render('query-results', documents);
       		 $('#results').html(content);
       		content = $.Mustache.render('previous-value', documents);

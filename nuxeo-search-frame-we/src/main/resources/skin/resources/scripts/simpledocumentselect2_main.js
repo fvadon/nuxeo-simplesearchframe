@@ -1,17 +1,5 @@
 /*
 */ 
-function doInitSelect2() {
-	initialValue="";
-	parentId="";
-	window.addEventListener( "message",
-	          function (e) {
-							initialValue=e.data.message;
-							parentId=e.data.parentId;
-							initSelect2FromParent(initialValue);
-	          });
-
-}
-
 $(document).ready(function() {
 	$(".js-document-selection-ajax").select2({
 		  ajax: {
@@ -51,14 +39,30 @@ $(document).ready(function() {
 		  });
 		
 	
-		//Automatic Messaging the parent and styling
-		
+		//Automatic styling
 		$(".js-document-selection-ajax").on("change", function (e) {
-			postToParentFromSelect2();
 			$(".select2-container--default .select2-selection--single").css("height",
 					$(".select2-selection__rendered").outerHeight( true ));
 		});
 		setTimeout(adjustHeight, 0); // Have to wait for the component to be loaded
+		
+		// Registering event listening from parent to init the value.
+		initialValue="";
+		parentId="";
+		window.addEventListener( "message",
+		          function (e) {
+								if(e.data.parentId){
+									initialValue=e.data.message;
+									parentId=e.data.parentId;
+									initSelect2FromParent(initialValue);
+								}
+		          });
+		
+		//Automatic parent posting.
+		$(".js-document-selection-ajax").on("change", postToParentFromSelect2);
+		//$(".js-document-selection-ajax").on("select2:unselect", postToParentFromSelect2);
+
+		
 });
 
 function adjustHeight() {	
@@ -100,10 +104,6 @@ function formatDocumentSelection (document) {
     	return document.text;
     }
   }
-
-
-
-
 
 function postToParentFromSelect2(){
 	var messageToSend = {parentId:parentId, documentId:$(".js-document-selection-ajax").val()}

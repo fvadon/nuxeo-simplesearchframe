@@ -10,16 +10,11 @@
 <script src="${skinPath}/scripts/select2.js"></script>
 </@block> 
 
-
-
-
 <@block name="content">
 
 <script type="text/javascript" charset="utf-8">
 	var serverURL = "${Context.getBaseURL()}/nuxeo/";
-	doInitSelect2();
 </script>
-
 
 <select class="js-document-selection-ajax" style="width: 50%">
 </select>
