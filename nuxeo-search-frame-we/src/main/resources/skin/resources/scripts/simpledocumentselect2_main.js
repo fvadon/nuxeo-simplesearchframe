@@ -3,7 +3,7 @@
 $(document).ready(function() {
 	$(".js-document-selection-ajax").select2({
 		  ajax: {
-		    url: "http://localhost:8080/nuxeo/site/api/v1/query",
+		    url: serverURL+"site/api/v1/query",
 			placeholder: "Search for an Asset",
 			allowClear: true,
 		    dataType: 'json',
