@@ -1,5 +1,5 @@
 <package type="addon" name="nuxeo-simplesearchform" version="@VERSION@">
-  <title>Nuxeo Tagging Operations</title>
+  <title>Nuxeo search frame content picker</title>
   <description>
     <p>This addon activates Nuxeo Simple search form</p>
   </description>
